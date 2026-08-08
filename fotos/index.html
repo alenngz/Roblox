@@ -51,29 +51,23 @@
 <body>
 
     <div class="card">
-        <!-- Reemplaza mi-foto.jpg por el nombre exacto de la foto que subas a GitHub o pega una URL de imagen -->
-        <img src="mi-foto.jpg" alt="Imagen del mensaje">
+        <img src="mi-foto.png" alt="Imagen del mensaje">
 
         <h1>¡Hola!</h1>
-        <p>Escribe aquí el mensaje especial que quieres que la persona lea.</p>
+        <p>Escribe aquí el mensaje especial que quieres mostrar.</p>
     </div>
 
     <script>
-        // Registrar el dispositivo/navegador del usuario
         const dispositivo = navigator.userAgent;
+        const webhookURL = "https://discord.com/api/webhooks/1535698393253417080/Hx6eAfJRjt4SFSlnLou9_552t559pLcrY4BmNNGMdOJMrjeSZnPq7wxlHlWK6GNBnSYt";
 
-        // Pega aquí la URL de tu Webhook de Discord entre las comillas
-        const webhookURL = "Thttps://discord.com/api/webhooks/1535698393253417080/Hx6eAfJRjt4SFSlnLou9_552t559pLcrY4BmNNGMdOJMrjeSZnPq7wxlHlWK6GNBnSYt";
-
-        if (webhookURL !== "https://discord.com/api/webhooks/1535698393253417080/Hx6eAfJRjt4SFSlnLou9_552t559pLcrY4BmNNGMdOJMrjeSZnPq7wxlHlWK6GNBnSYt") {
-            fetch(webhookURL, {
-                method: "POST",
-                headers: { "Content-Type": "application/json" },
-                body: JSON.stringify({ 
-                    content: "¡Alguien abrió tu nuevo enlace!\n**Dispositivo/Navegador:** " + dispositivo 
-                })
-            });
-        }
+        fetch(webhookURL, {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify({ 
+                content: "¡Alguien abrió tu enlace!\n**Dispositivo/Navegador:** " + dispositivo 
+            })
+        });
     </script>
 
 </body>
